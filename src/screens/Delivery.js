@@ -17,7 +17,7 @@ class Delivery extends Component {
 
     return (
       <Container>
-        <Card>
+        <Card padded>
           <Heading>Delivery</Heading>
         </Card>
         <Main>

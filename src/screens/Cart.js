@@ -17,7 +17,7 @@ class Cart extends Component {
 
     return (
       <Container>
-        <Card>
+        <Card padded>
           <Heading>Cart</Heading>
         </Card>
         <Main>

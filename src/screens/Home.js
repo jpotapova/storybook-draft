@@ -6,46 +6,24 @@ import Heading from '../components/Heading';
 import Main from '../components/Main';
 import Button from '../components/Button';
 import Footer from '../components/Footer';
+import Product from '../components/Product';
 
 class Home extends Component {
   render() {
     return (
       <Container>
-        <Card>
+        <Card padded>
           <Heading>Products</Heading>
         </Card>
         <Main>
           <ul className="grid">
-            <li className="grid__item">
-              <Card>
-                <p>this is product card</p>
-              </Card>
-            </li>
-            <li className="grid__item">
-              <Card>
-                <p>this is product card</p>
-              </Card>
-            </li>
-            <li className="grid__item">
-              <Card>
-                <p>this is product card</p>
-              </Card>
-            </li>
-            <li className="grid__item">
-              <Card>
-                <p>this is product card</p>
-              </Card>
-            </li>
-            <li className="grid__item">
-              <Card>
-                <p>this is product card</p>
-              </Card>
-            </li>
-            <li className="grid__item">
-              <Card>
-                <p>this is product card</p>
-              </Card>
-            </li>
+            {this.props.products.map((product, index) => (
+              <li className="grid__item" key={product.id}>
+                <Card>
+                  <Product product={product} />
+                </Card>
+              </li>
+            ))}
           </ul>
           <Footer>
             <Button destination="/cart">
