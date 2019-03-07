@@ -8,6 +8,7 @@ import Main from '../components/Main';
 import Button from '../components/Button';
 import Footer from '../components/Footer';
 import Price from '../components/Price';
+import Star from '../components/Star';
 
 class Cart extends Component {
   render() {
@@ -28,7 +29,7 @@ class Cart extends Component {
             <ul className="list">
               {this.props.products.map((product, index) => (
                 <li class={productsCount === index + 1 ? 'list__item list__item_last' : 'list__item'}>
-                  <div className="list__star">star</div>
+                  <div className="list__star"><Star show={product.star}/></div>
                   <div className="list__title">{product.title}</div>
                   <div className="list__star"><Price>{product.price}</Price></div>
                 </li>
