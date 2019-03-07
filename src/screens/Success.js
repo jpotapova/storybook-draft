@@ -7,8 +7,9 @@ import Heading from '../components/Heading';
 import Main from '../components/Main';
 import Button from '../components/Button';
 import Footer from '../components/Footer';
+import Happy from '../components/Happy';
 
-class Delivery extends Component {
+class Success extends Component {
   render() {
 
     if (!this.props.products.length) {
@@ -18,16 +19,13 @@ class Delivery extends Component {
     return (
       <Container>
         <Card padded>
-          <Heading>Delivery</Heading>
+          <Heading>Success</Heading>
         </Card>
         <Main>
-          <p>list of items</p>
-          <Footer>
+          <Happy />
+          <Footer align="center">
             <Button destination="/">
               Select more products
-            </Button>
-            <Button destination="/cart">
-              Back to cart
             </Button>
           </Footer>
         </Main>
@@ -36,4 +34,4 @@ class Delivery extends Component {
   }
 }
 
-export default Delivery;
+export default Success;

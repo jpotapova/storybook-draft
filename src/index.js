@@ -1,23 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import { Route, Link, BrowserRouter as Router } from 'react-router-dom';
 import App from './App';
-import Home from './screens/Home';
-import Cart from './screens/Cart';
-import Delivery from './screens/Delivery';
 
 import * as serviceWorker from './serviceWorker';
 
-const routing = (
-  <Router>
-    <div>
-      <Route exact path="/" component={Home} />
-      <Route path="/cart" component={Cart} />
-      <Route path="/delivery" component={Delivery} />
-    </div>
-  </Router>
-)
 ReactDOM.render(<App />, document.getElementById('root'))
 
 

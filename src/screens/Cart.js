@@ -28,7 +28,7 @@ class Cart extends Component {
           <Card>
             <ul className="list">
               {this.props.products.map((product, index) => (
-                <li class={productsCount === index + 1 ? 'list__item list__item_last' : 'list__item'}>
+                <li key={product.id} className={productsCount === index + 1 ? 'list__item list__item_last' : 'list__item'}>
                   <div className="list__star"><Star show={product.star}/></div>
                   <div className="list__title">{product.title}</div>
                   <div className="list__star"><Price>{product.price}</Price></div>
@@ -40,8 +40,8 @@ class Cart extends Component {
             <Button destination="/">
               Select more products
             </Button>
-            <Button destination="/delivery">
-              View delivery page
+            <Button destination="/success">
+              Checkout
             </Button>
           </Footer>
         </Main>

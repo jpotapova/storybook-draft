@@ -66,6 +66,10 @@ body {
   justify-content: flex-end;
 }
 
+.footer_center {
+  justify-content: center;
+}
+
 .card {
   background: #fff;
   border-radius: 5px;
@@ -117,4 +121,9 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+
+.happy {
+  justify-content: center;
+  display: flex;
 }

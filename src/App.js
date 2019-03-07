@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import { Route, Link, BrowserRouter as Router } from 'react-router-dom';
+import { Route, BrowserRouter as Router } from 'react-router-dom';
 
 import Home from './screens/Home';
 import Cart from './screens/Cart';
-import Delivery from './screens/Delivery';
+import Success from './screens/Success';
 
 class App extends Component {
   constructor(props) {
@@ -86,8 +86,8 @@ class App extends Component {
             render={props => <Cart {...props} products={this.state.products.filter(product => product.cart)} />}
           />
           <Route
-            path="/delivery"
-            render={props => <Delivery {...props} products={this.state.products.filter(product => product.cart)} />}
+            path="/success"
+            render={props => <Success {...props} products={this.state.products.filter(product => product.cart)} />}
           />
         </div>
       </Router>
