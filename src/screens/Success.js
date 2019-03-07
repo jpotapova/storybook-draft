@@ -10,6 +10,10 @@ import Footer from '../components/Footer';
 import Happy from '../components/Happy';
 
 class Success extends Component {
+  componentWillUnmount() {
+    this.props.clearCart();
+  }
+
   render() {
 
     if (!this.props.products.length) {
@@ -24,8 +28,8 @@ class Success extends Component {
         <Main>
           <Happy />
           <Footer align="center">
-            <Button destination="/">
-              Select more products
+            <Button destination="/" enabled>
+              Back to home
             </Button>
           </Footer>
         </Main>

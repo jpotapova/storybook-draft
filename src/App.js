@@ -66,10 +66,18 @@ class App extends Component {
     this.setState({ products });
   };
 
+  clearCart = () => {
+    const products = this.state.products.map((product) => {
+      product.cart = false;
+      return product;
+    });
+    this.setState({ products });
+  };
+
   render() {
     return (
       <Router>
-        <div>
+        <div className="app">
           <Route
             exact path="/"
             render={
@@ -87,7 +95,14 @@ class App extends Component {
           />
           <Route
             path="/success"
-            render={props => <Success {...props} products={this.state.products.filter(product => product.cart)} />}
+            render={
+              props => (
+                <Success {...props}
+                  products={this.state.products.filter(product => product.cart)}
+                  clearCart={this.clearCart}
+                />
+              )
+            }
           />
         </div>
       </Router>

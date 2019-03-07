@@ -37,10 +37,10 @@ class Cart extends Component {
             </ul>
           </Card>
           <Footer>
-            <Button destination="/">
+            <Button destination="/" enabled>
               Select more products
             </Button>
-            <Button destination="/success">
+            <Button destination="/success" enabled>
               Checkout
             </Button>
           </Footer>

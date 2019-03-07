@@ -6,7 +6,7 @@ class Button extends Component {
 
   render() {
     return (
-      <Link to={this.props.destination} className="button">
+      <Link to={this.props.destination} className={this.props.enabled ? 'button' : 'button button_disabled'}>
         {this.props.children}
       </Link>
     );

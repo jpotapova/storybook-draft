@@ -30,7 +30,7 @@ class Home extends Component {
             ))}
           </ul>
           <Footer align="right">
-            <Button destination="/cart">
+            <Button destination="/cart" enabled={this.props.products.filter(product => product.cart).length}>
               View cart
             </Button>
           </Footer>
