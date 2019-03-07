@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
 
 import Heading from '../components/Heading';
+import Price from '../components/Price';
 
 class Product extends Component {
   render() {
     return (
       <div className="product">
         <div className="product__heading">
-          <div>&euro; {this.props.product.price}</div>
+          <div><Price>{this.props.product.price}</Price></div>
           <div>star goes here</div>
         </div>
         <div className="product__body">

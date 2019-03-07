@@ -28,6 +28,34 @@ body {
   width: 30%;
 }
 
+.list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.list__item {
+  padding: 10px 20px;
+  border-bottom: 1px solid #666;
+  display: flex;
+}
+
+.list__item_last {
+  border-bottom: 0
+}
+
+.list__star {
+  width: 10%;
+}
+
+.list__price {
+  width: 10%;
+}
+
+.list__title {
+  width: 80%;
+}
+
 .footer {
   padding-top: 20px;
   display: flex;
@@ -80,11 +108,11 @@ body {
 
 .product__body {
   padding: 30px 20px;
+  height: 100px;
 }
 
 .product__heading {
   padding: 10px 20px;
   border-bottom: 1px solid #666;
   display: flex;
-  justify-content: space-between;
 }
