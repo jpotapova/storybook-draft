@@ -2,9 +2,10 @@ import React, { Component } from 'react';
 
 class Footer extends Component {
   render() {
+    const { align, children } = this.props;
     return (
-      <div className={this.props.align ? `footer footer_${this.props.align}` : 'footer'}>
-        {this.props.children}
+      <div className={align ? `footer footer_${align}` : 'footer'}>
+        {children}
       </div>
     );
   }

@@ -57,24 +57,30 @@ class App extends Component {
   }
 
   toggleProduct = (id) => {
-    const products = this.state.products.map((product) => {
+    const { products } = this.state;
+
+    const updatedProducts = products.map((product) => {
       if (product.id === id) {
         product.cart = !product.cart;
       }
       return product;
     });
-    this.setState({ products });
+    this.setState({ updatedProducts });
   };
 
   clearCart = () => {
-    const products = this.state.products.map((product) => {
+    const { products } = this.state;
+
+    const updatedProducts = products.map((product) => {
       product.cart = false;
       return product;
     });
-    this.setState({ products });
+    this.setState({ products: updatedProducts });
   };
 
   render() {
+    const { products } = this.state;
+
     return (
       <Router>
         <div className="app">
@@ -83,7 +89,7 @@ class App extends Component {
             render={
               props => (
                 <Home {...props}
-                  products={this.state.products}
+                  products={products}
                   toggleProduct={this.toggleProduct}
                 />
               )
@@ -91,14 +97,14 @@ class App extends Component {
           />
           <Route
             path="/cart"
-            render={props => <Cart {...props} products={this.state.products.filter(product => product.cart)} />}
+            render={props => <Cart {...props} products={products.filter(product => product.cart)} />}
           />
           <Route
             path="/success"
             render={
               props => (
                 <Success {...props}
-                  products={this.state.products.filter(product => product.cart)}
+                  products={products.filter(product => product.cart)}
                   clearCart={this.clearCart}
                 />
               )

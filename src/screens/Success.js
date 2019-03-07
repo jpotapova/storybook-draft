@@ -11,12 +11,15 @@ import Happy from '../components/Happy';
 
 class Success extends Component {
   componentWillUnmount() {
-    this.props.clearCart();
+    const { clearCart } = this.props;
+
+    clearCart();
   }
 
   render() {
+    const { products } = this.props;
 
-    if (!this.props.products.length) {
+    if (!products.length) {
       return <Redirect to='/' />
     }
 

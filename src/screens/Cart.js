@@ -9,11 +9,12 @@ import Button from '../components/Button';
 import Footer from '../components/Footer';
 import Price from '../components/Price';
 import Star from '../components/Star';
+import CartItem from '../components/CartItem';
 
 class Cart extends Component {
   render() {
-
-    const productsCount = this.props.products.length;
+    const { products } = this.props;
+    const productsCount = products.length;
 
     if (!productsCount) {
       return <Redirect to='/' />
@@ -27,12 +28,8 @@ class Cart extends Component {
         <Main>
           <Card>
             <ul className="list">
-              {this.props.products.map((product, index) => (
-                <li key={product.id} className={productsCount === index + 1 ? 'list__item list__item_last' : 'list__item'}>
-                  <div className="list__star"><Star show={product.star}/></div>
-                  <div className="list__title">{product.title}</div>
-                  <div className="list__star"><Price>{product.price}</Price></div>
-                </li>
+              {products.map((product, index) => (
+                <CartItem key={product.id} last={productsCount === index + 1} product={product}/>
               ))}
             </ul>
           </Card>

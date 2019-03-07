@@ -9,8 +9,9 @@ import Footer from '../components/Footer';
 import Product from '../components/Product';
 
 class Home extends Component {
-
   render() {
+    const { products, toggleProduct } = this.props;
+
     return (
       <Container>
         <Card padded>
@@ -18,19 +19,14 @@ class Home extends Component {
         </Card>
         <Main>
           <ul className="grid">
-            {this.props.products.map((product, index) => (
+            {products.map((product, index) => (
               <li className="grid__item" key={product.id}>
-                <Card
-                  onClick={() => { this.props.toggleProduct(product.id) }}
-                  selected={product.cart}
-                >
-                  <Product product={product} />
-                </Card>
+                <Product product={product} toggleProduct={toggleProduct}/>
               </li>
             ))}
           </ul>
           <Footer align="right">
-            <Button destination="/cart" enabled={this.props.products.filter(product => product.cart).length}>
+            <Button destination="/cart" enabled={products.filter(product => product.cart).length}>
               View cart
             </Button>
           </Footer>

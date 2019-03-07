@@ -2,9 +2,11 @@ import React, { Component } from 'react';
 
 class Price extends Component {
   render() {
+    const { children } = this.props;
+
     return (
       <span>
-        &euro; {this.props.children}
+        &euro; {children}
       </span>
     );
   }

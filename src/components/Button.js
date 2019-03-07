@@ -1,13 +1,16 @@
 import React, { Component } from 'react';
-
-import { Route, Link, BrowserRouter as Router } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 class Button extends Component {
-
   render() {
+    const { destination, enabled, children } = this.props;
+
     return (
-      <Link to={this.props.destination} className={this.props.enabled ? 'button' : 'button button_disabled'}>
-        {this.props.children}
+      <Link
+        to={destination}
+        className={enabled ? 'button' : 'button button_disabled'}
+      >
+        {children}
       </Link>
     );
   }
