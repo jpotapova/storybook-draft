@@ -1,0 +1,44 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial;
+  background: #eee;
+  color: #666;
+}
+
+.container {
+  padding: 40px;
+}
+
+.main {
+  padding-top: 20px;
+}
+
+.grid {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.grid__item {
+  padding-bottom: 20px;
+  width: 30%;
+}
+
+.card {
+  background: #fff;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.heading {
+  text-align: center;
+  font-weight: normal;
+}
+
+.heading_h1 {
+  font-size: 2rem;
+}
