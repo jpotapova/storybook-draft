@@ -48,8 +48,8 @@ class Home extends Component {
             </li>
           </ul>
           <Footer>
-            <Button>
-              Add to cart
+            <Button destination="/cart">
+              View cart
             </Button>
           </Footer>
         </Main>

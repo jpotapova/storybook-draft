@@ -6,7 +6,7 @@ class Button extends Component {
 
   render() {
     return (
-      <Link to="/cart" className="button">
+      <Link to={this.props.destination} className="button">
         {this.props.children}
       </Link>
     );

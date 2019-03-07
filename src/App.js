@@ -19,10 +19,13 @@ class App extends Component {
         <div>
           <Route exact path="/" component={Home} />
           <Route
-              path="/cart"
-              render={props => <Cart {...props} cartItems={this.state.cartItems} />} />
+            path="/cart"
+            render={props => <Cart {...props} cartItems={this.state.cartItems} />}
           />
-          <Route path="/delivery" component={Delivery} />
+          <Route
+            path="/delivery"
+            render={props => <Delivery {...props} cartItems={this.state.cartItems} />}
+          />
         </div>
       </Router>
     );
