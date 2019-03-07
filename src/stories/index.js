@@ -2,9 +2,6 @@ import React from 'react';
 
 import { storiesOf } from '@storybook/react';
 import { withKnobs, boolean, text } from '@storybook/addon-knobs';
-// import { action } from '@storybook/addon-actions';
-// import { linkTo } from '@storybook/addon-links';
-
 
 import '../index.css';
 
@@ -12,6 +9,9 @@ import Button from '../components/Button';
 import Card from '../components/Card';
 import Heading from '../components/Heading';
 import Happy from '../components/Happy';
+import Header from '../components/Header';
+import Product from '../components/Product';
+import CartItem from '../components/CartItem';
 
 // 1. simplest example - Happy
 storiesOf('Happy')
@@ -37,34 +37,29 @@ storiesOf('Card story with knobs')
   .add('interactive', () => <Card padded selected={boolean('Selected', false)}>{text('Card content', 'Change me!')}</Card>)
 
 
+// other
+storiesOf('Header')
+  .addDecorator(storyFn => <div class="app"><div class="container">{storyFn()}</div></div>)
+  .add('basic', () => <Header>Hello world</Header>)
 
+storiesOf('Product')
+  .addDecorator(storyFn => <div class="app"><div class="container">{storyFn()}</div></div>)
+  .add('product', () => (
+    <Product
+      product={{id: 1, title: "Sriuba", price: "1.60", star: true,}}
+    />
+  ));
 
-// 1. Button requires additional setup
-// storiesOf('Button', module)
-//   .add('simple', () => <Button destination="/">Simple button</Button>);
-
-// card - to do with decorator or background addon
-
-
-
-  // .add('with some emoji', () => (
-  //   <Button onClick={action('clicked')}>
-  //     <span role="img" aria-label="so cool">
-  //       😀 😎 👍 💯
-  //     </span>
-  //   </Button>
-  // ));
-
-// import { Button, Welcome } from '@storybook/react/demo';
-//
-// storiesOf('Welcome', module).add('to Storybook', () => <Welcome showApp={linkTo('Button')} />);
-//
-// storiesOf('Button', module)
-//   .add('with text', () => <Button onClick={action('clicked')}>Hello Button</Button>)
-//   .add('with some emoji', () => (
-//     <Button onClick={action('clicked')}>
-//       <span role="img" aria-label="so cool">
-//         😀 😎 👍 💯
-//       </span>
-//     </Button>
-//   ));
+storiesOf('Cart item')
+  .addDecorator(storyFn => <div class="app"><div class="container"><Card>{storyFn()}</Card></div></div>)
+  .add('regular', () => (
+    <CartItem
+      product={{id: 1, title: "Sriuba", price: "1.60", star: true,}}
+    />
+  ))
+  .add('last', () => (
+    <CartItem
+      product={{id: 1, title: "Sriuba", price: "1.60", star: true,}}
+      last
+    />
+  ))
