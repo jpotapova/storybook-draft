@@ -4,6 +4,8 @@ import Container from '../components/Container';
 import Card from '../components/Card';
 import Heading from '../components/Heading';
 import Main from '../components/Main';
+import Button from '../components/Button';
+import Footer from '../components/Footer';
 
 class Home extends Component {
   render() {
@@ -45,6 +47,11 @@ class Home extends Component {
               </Card>
             </li>
           </ul>
+          <Footer>
+            <Button>
+              Add to cart
+            </Button>
+          </Footer>
         </Main>
       </Container>
     );

@@ -28,6 +28,12 @@ body {
   width: 30%;
 }
 
+.footer {
+  padding-top: 20px;
+  display: flex;
+  justify-content: flex-end;
+}
+
 .card {
   background: #fff;
   padding: 20px;
@@ -41,4 +47,13 @@ body {
 
 .heading_h1 {
   font-size: 2rem;
+}
+
+.button {
+  background: #97C5BF;
+  font-size: 1em;
+  border-radius: 3px;
+  padding: 10px 20px;
+  color: #666;
+  text-decoration: none;
 }
