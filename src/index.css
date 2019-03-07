@@ -37,6 +37,7 @@ body {
 .card {
   background: #fff;
   border-radius: 5px;
+  display: block;
 }
 
 .card_padded {

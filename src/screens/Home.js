@@ -9,6 +9,8 @@ import Footer from '../components/Footer';
 import Product from '../components/Product';
 
 class Home extends Component {
+
+
   render() {
     return (
       <Container>
@@ -19,7 +21,7 @@ class Home extends Component {
           <ul className="grid">
             {this.props.products.map((product, index) => (
               <li className="grid__item" key={product.id}>
-                <Card>
+                <Card onClick={() => { this.props.toggleProduct(product.id) }}>
                   <Product product={product} />
                 </Card>
               </li>
