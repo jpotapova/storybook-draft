@@ -1,13 +1,9 @@
 import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
 
-import Container from '../components/Container';
-import Card from '../components/Card';
-import Heading from '../components/Heading';
-import Main from '../components/Main';
 import Button from '../components/Button';
-import Footer from '../components/Footer';
 import Happy from '../components/Happy';
+import Header from '../components/Header';
 
 class Success extends Component {
   componentWillUnmount() {
@@ -24,19 +20,17 @@ class Success extends Component {
     }
 
     return (
-      <Container>
-        <Card padded>
-          <Heading>Success</Heading>
-        </Card>
-        <Main>
+      <div className="container">
+        <Header>Success</Header>
+        <div className="main">
           <Happy />
-          <Footer align="center">
+          <div className="footer footer_center">
             <Button destination="/" enabled>
               Back to home
             </Button>
-          </Footer>
-        </Main>
-      </Container>
+          </div>
+        </div>
+      </div>
     );
   }
 }

@@ -1,15 +1,10 @@
 import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
 
-import Container from '../components/Container';
 import Card from '../components/Card';
-import Heading from '../components/Heading';
-import Main from '../components/Main';
 import Button from '../components/Button';
-import Footer from '../components/Footer';
-import Price from '../components/Price';
-import Star from '../components/Star';
 import CartItem from '../components/CartItem';
+import Header from '../components/Header';
 
 class Cart extends Component {
   render() {
@@ -21,11 +16,9 @@ class Cart extends Component {
     }
 
     return (
-      <Container>
-        <Card padded>
-          <Heading>Cart</Heading>
-        </Card>
-        <Main>
+      <div className="container">
+        <Header>Cart</Header>
+        <div className="main">
           <Card>
             <ul className="list">
               {products.map((product, index) => (
@@ -33,16 +26,16 @@ class Cart extends Component {
               ))}
             </ul>
           </Card>
-          <Footer>
+          <div className="footer">
             <Button destination="/" enabled>
               Select more products
             </Button>
             <Button destination="/success" enabled>
               Checkout
             </Button>
-          </Footer>
-        </Main>
-      </Container>
+          </div>
+        </div>
+      </div>
     );
   }
 }
