@@ -11,7 +11,7 @@ import Footer from '../components/Footer';
 class Cart extends Component {
   render() {
 
-    if (!this.props.cartItems.length) {
+    if (!this.props.products.length) {
       return <Redirect to='/' />
     }
 

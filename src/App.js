@@ -77,11 +77,11 @@ class App extends Component {
           />
           <Route
             path="/cart"
-            render={props => <Cart {...props} products={this.state.products} />}
+            render={props => <Cart {...props} products={this.state.products.filter(product => product.cart)} />}
           />
           <Route
             path="/delivery"
-            render={props => <Delivery {...props} products={this.state.products} />}
+            render={props => <Delivery {...props} products={this.state.products.filter(product => product.cart)} />}
           />
         </div>
       </Router>

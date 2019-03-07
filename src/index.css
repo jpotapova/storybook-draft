@@ -31,6 +31,10 @@ body {
 .footer {
   padding-top: 20px;
   display: flex;
+  justify-content: space-between;
+}
+
+.footer_right {
   justify-content: flex-end;
 }
 
@@ -42,6 +46,10 @@ body {
 
 .card_padded {
   padding: 20px;
+}
+
+.card_selected {
+  background: #ccc;
 }
 
 .heading {
